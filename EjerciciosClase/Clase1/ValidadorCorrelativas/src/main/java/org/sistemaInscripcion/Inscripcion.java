@@ -1,15 +1,17 @@
 package org.sistemaInscripcion;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
 public class Inscripcion {
     private Alumno alumno;
-    private Set<Materia> materiasInscriptas;
+    private List<Materia> materiasInscriptas;
 
-    public Inscripcion(Set<Materia> materiasInscriptas) {
-        this.materiasInscriptas = materiasInscriptas;
+    public Inscripcion(Alumno alumno) {
+        this.alumno = alumno;
+        this.materiasInscriptas = new ArrayList<>();
     }
 
     public boolean aprobada(){

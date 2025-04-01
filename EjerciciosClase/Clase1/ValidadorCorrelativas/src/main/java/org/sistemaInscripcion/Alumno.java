@@ -2,6 +2,7 @@ package org.sistemaInscripcion;
 
 import lombok.Setter;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Set;
@@ -11,8 +12,15 @@ import java.util.Set;
 public class Alumno {
     private String nombreCompleto;
     private Integer legajo;
-    private Set<Materia> materiasCursadas;
-    private Set<Materia> materiasAprobadas;
+    private List<Materia> materiasCursadas;
+    private List<Materia> materiasAprobadas;
+
+    public Alumno(String nombreCompleto, Integer legajo) {
+        this.nombreCompleto = nombreCompleto;
+        this.legajo = legajo;
+        this.materiasCursadas = new ArrayList<Materia>();
+        this.materiasAprobadas = new ArrayList<Materia>();
+    }
 
     public boolean yaCurso(Materia materia){
         return materiasCursadas.contains(materia);
