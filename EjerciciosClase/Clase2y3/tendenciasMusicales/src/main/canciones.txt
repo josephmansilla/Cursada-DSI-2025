@@ -1,0 +1,80 @@
+no consideramos múltiples artistas por canciones y no consideramos los singles
+
+----------------- PROPUESTA 1 -----------------
+- Canción 1
+    - Nombre: "The Scientist"
+    - Año: 2002
+    - NombreArtista: "Coldplay" --> problema de consistencia de datos por querer usar String
+    - NombreAlbum: "..."
+
+- Canción 1
+    - Nombre: "Clocks"
+    - Año: 2002
+    - NombreArtista: "coldplay"
+    - NombreAlbum: "..."
+
+- Canción 3
+    - Nombre: "Fix you"
+    - Año: 2011
+    - NombreArtista: "COLDPLAY"
+    - NombreAlbum: "..."
+
+----------------- PROPUESTA 2 -----------------
+ARTISTA COMO ENUMERADO -> NO SE PUEDE DAR DE ALTA EN EL MOMENTO DE EJECUCIÓN (SE PROGRAMA DE MANERA PROGRAMÁTICA)
+
+programático -> cambiar datos de forma manual en el código
+
+enum ARTISTA{
+    COLDPLAY,
+    ...
+    ...
+    ...
+}
+
+- Canción 1
+    - Nombre: "The Scientist"
+    - Año: 2002
+    - NombreArtista: ARTISTA.COLDPLAY
+    - NombreAlbum: "..."
+
+- Canción 1
+    - Nombre: "Clocks"
+    - Año: 2002
+    - NombreArtista: "coldplay"
+    - NombreAlbum: "..."
+
+- Canción 3
+    - Nombre: "Fix you"
+    - Año: 2011
+    - NombreArtista: "COLDPLAY"
+    - NombreAlbum: "..."
+
+hay una problemática donde tengo que estar constantemente cambiando el código si hay cambios
+no hay buena mantebilidad
+
+----------------- PROPUESTA 3 -----------------
+ARTISTA COMO CLASE -> se evita inconsistencia de datos
+                        no se tiene que estar constantemente agregando o instanciando X nombre.
+                        es posible expandir la lógica de artista fácilmente
+
+- Artista 1:
+    - Nombre: "Coldplay"
+    - ...
+
+- Canción 1
+    - Nombre: "The Scientist"
+    - Año: 2002
+    - NombreArtista: Artista 1
+    - NombreAlbum: "..."
+
+- Canción 1
+    - Nombre: "Clocks"
+    - Año: 2002
+    - NombreArtista: Artista 1
+    - NombreAlbum: "..."
+
+- Canción 3
+    - Nombre: "Fix you"
+    - Año: 2011
+    - NombreArtista: Artista 1
+    - NombreAlbum: "..."
