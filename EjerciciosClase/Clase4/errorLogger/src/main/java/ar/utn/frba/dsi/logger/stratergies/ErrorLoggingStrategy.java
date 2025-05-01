@@ -1,5 +1,7 @@
 package ar.utn.frba.dsi.logger.stratergies;
 
-public interface ErrorLoggingStrategy {
+import ar.utn.frba.dsi.logger.Error;
 
+public interface ErrorLoggingStrategy {
+  void logError(Error error);
 }

@@ -1,8 +1,12 @@
 package ar.utn.frba.dsi.logger.stratergies;
 
+import ar.utn.frba.dsi.logger.Error;
+import ar.utn.frba.dds.logger.utils.ObjectToMapConversor;
+import ar.utn.frba.dsi.logger.adapters.databaseAdapter;
+
 public class DataBaseErrorLoggingStrategy implements ErrorLoggingStrategy {
 
-    private DB db;
+    private databaseAdapter db;
     @Override
     public void logError(Error error){
         this.db.connect();

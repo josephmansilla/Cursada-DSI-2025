@@ -1,13 +1,17 @@
 package ar.utn.frba.dsi.logger;
 
+import static com.sun.org.apache.xalan.internal.xsltc.compiler.sym.error;
+
 import java.time.LocalDateTime;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
 
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
 @Builder
-
 public class Error {
 
     private String message;
@@ -15,27 +19,27 @@ public class Error {
     private LocalDateTime timestamp;
 
     public static Error of(String message){
-        return error.
-                builder()
+        return Error
+                .builder()
                 .message(message)
-                .timeStamp(LocalDateTime.now())
+                .timestamp(LocalDateTime.now())
                 .build();
     }
     public static Error of(String message, String stackTrace) {
-        return error.
+        return Error.
                 builder()
                 .message(message)
                 .stackTrace(stackTrace)
-                .timeStamp(LocalDateTime.now())
+                .timestamp(LocalDateTime.now())
                 .build();
     }
 
     public static Error of(String message, String stackTrace, LocalDateTime timestamp) {
-        return error
+        return Error
                 .builder()
                 .message(message)
                 .stackTrace(stackTrace)
-                .timeStamp(timestamp)
+                .timestamp(timestamp)
                 .build();
     }
 }

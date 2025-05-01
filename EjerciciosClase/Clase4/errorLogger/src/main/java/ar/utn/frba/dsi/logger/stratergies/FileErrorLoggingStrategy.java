@@ -1,5 +1,7 @@
 package ar.utn.frba.dsi.logger.stratergies;
 
+import ar.utn.frba.dsi.logger.Error;
+
 public class FileErrorLoggingStrategy implements ErrorLoggingStrategy {
     @Override
     public void logError(Error error){
